@@ -1,4 +1,3 @@
-
 const logout = new LogoutButton();
 logout.action = () => {
     ApiConnector.logout(response => {
@@ -36,7 +35,7 @@ moneymanager.addMoneyCallback = response1 => {
         if (response2.success) {
             moneymanager.setMessage(response2.success, 'Удачное добавление баланса');
         } else {
-            throw moneymanager.setMessage(response2.success, 'Неудачное добавление баланса');
+            throw moneymanager.setMessage(response2.success, response2.error);
         }
     });  
 };
@@ -50,7 +49,7 @@ moneymanager.conversionMoneyCallback = response1 => {
         if (response2.success) {
             moneymanager.setMessage(response2.success, 'Удачное конвертирование');
         } else {
-            throw moneymanager.setMessage(response2.success, 'Неудачное конвертирование');
+            throw moneymanager.setMessage(response2.success, response2.error);
         }
     });
 };
@@ -64,7 +63,7 @@ moneymanager.sendMoneyCallback = response1 => {
         if (response2.success) {
             moneymanager.setMessage(response2.success, 'Удачная передача');
         } else {
-            throw moneymanager.setMessage(response2.success, 'Неудачная передача');
+            throw moneymanager.setMessage(response2.success, response2.error);
         }
     });
 };
@@ -89,7 +88,7 @@ favoriteswidget.addUserCallback = response1 => {
         if (response2.success) {
             favoriteswidget.setMessage(response2.success, 'Удачное добавление в избранное');
         } else {
-            throw favoriteswidget.setMessage(response2.success, 'Неудачное добавление в избранное');
+            throw favoriteswidget.setMessage(response2.success, response2.error);
         }
     });
 };
@@ -105,7 +104,7 @@ favoriteswidget.removeUserCallback = response1 => {
         if (response2.success) {
             favoriteswidget.setMessage(response2.success, 'Удачное удаление из избранного');
         } else {
-            throw favoriteswidget.setMessage(response2.success, 'Неудачное удаление из избранного');
+            throw favoriteswidget.setMessage(response2.success, response2.error);
         }
     });
 };
